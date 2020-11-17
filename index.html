@@ -15,15 +15,27 @@
         </div>
     </header>
     <aside class='controls'>
+        <div class='instructions'>
+            <h2>Instructions:</h2>
+            <ol>
+                <li>Click inside the etch-a-sketch to start.</li>
+                <li>Press backspace, or enter, or spacebar to stop drawing.</li>
+                <li>Use buttons to adjust size and color of your etch.</li>
+            </ol>
+        </div>
         <div>
-            <ul>
-                <li><button class='active'>16x16</button></li>
-                <li><button>64x64</button></li>
-            </ul>
+                <button id='reset-button'>Reset</button>
+                <button id ="16" class='active optionButton'>16x16</button>
+                <button id="28" class='optionButton'>28x28</button>
+                <button id="36" class='optionButton'>36x36</button>
+        </div>
+        <div>
+            <button class='colorButton'>black</button>
+            <button class='colorButton'>random</button>
         </div>
     </aside>
-    <main class='etch-grid-container'>
-
+    <main >
+        <section class='etch-grid-container'></section>
     </main>
     <script src='scripts.js'></script>
 </body>

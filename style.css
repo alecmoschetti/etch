@@ -5,22 +5,35 @@
 }
 
 html {
+    max-height: 100vh;
     width: 100vw;
     height: 100vh;
 }
 
 body {
+    margin: 1rem auto;
+}
+
+header,
+aside {
+    text-align: center;
+}
+
+main,
+section {
     margin: 0 auto;
-    width: 80vw;
-    height: 90vh;
+}
+
+body {
+    width: 95%;
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: 10% 50% 40%;
     grid-template-areas: 
         "header"
         "etch"
-        "options"
-    ;
+        "options";
 }
 
 header {
@@ -31,12 +44,60 @@ aside {
     grid-area: options;
 }
 
+aside,
+.instructions {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+}
+
 main {
-    grid-area: etch;
     place-self: center;
-    width: 30rem;
-    height: 30rem;
+    width: 100%;
+    height: 100%;
+    grid-area: etch;
+}
+
+section {
+    width: 90%;
+    height: 100%;
     display: grid;
     border: 1px solid rgba(0, 0, 0, 0.4);
     background-color: rgba(39, 35, 35, 0.2);
+}
+
+.instructions li {
+    margin-top: .75em;
+}
+
+@media (min-width: 1000px) {
+    body {
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 20% 80%;
+        grid-template-areas: 
+            "header header"
+            "options etch"
+        ;
+    }
+
+    section {
+        width: 80%;
+        height: 60%;
+    }
+}
+
+@media (min-width: 1280px) {
+    body {
+        grid-template-columns: 30% 70%;
+        grid-template-rows: 20% 80%;
+        grid-template-areas: 
+            "header etch"
+            "options etch"
+        ;
+    }
+
+    section {
+        width: 70%;
+        height: 90%;
+    }
 }
